@@ -1,0 +1,16 @@
+version: 2      # which verion of CircleCI to use
+jobs:
+    build:
+        working_directory: ~/tmp
+        # Now we tell CircleCI that we want to build our project
+        # in a Docker container that has Node 7 installed.
+        docker:
+            - image: circle/node:7
+        steps:      # testing steps
+            - checkout      # shorthand for cloning the repo
+                            # CircleCI is aware of our GitHub repo
+                            # and already has access to that, so we
+                            # don't need any more credentials
+            # Then we tell CircleCI to run the following
+            - run: npm install
+            - run: npm test
