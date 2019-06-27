@@ -5,7 +5,7 @@ jobs:
         # Now we tell CircleCI that we want to build our project
         # in a Docker container that has Node 7 installed.
         docker:
-            - image: circle/node:7
+            - image: circleci/node:7
         steps:      # testing steps
             - checkout      # shorthand for cloning the repo
                             # CircleCI is aware of our GitHub repo
